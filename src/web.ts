@@ -6,8 +6,21 @@ export class CapacitorPluginTnkWeb
   extends WebPlugin
   implements CapacitorPluginTnkPlugin
 {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async call_tnk_bannerAd(options: { tnk_pub_id: string; placementId: string; }): Promise<void> {
+    console.log('tnk_pub_id', options.tnk_pub_id);
+    console.log('placementId', options.placementId);
   }
+  async call_tnk_nativeAd(options: { tnk_pub_id: string; placementId: string; }): Promise<void> {
+    console.log('tnk_pub_id', options.tnk_pub_id);
+    console.log('placementId', options.placementId);
+  }
+  async call_tnk_interstitialAd(options: { tnk_pub_id: string; placementId: string; }): Promise<void> {
+    console.log('tnk_pub_id', options.tnk_pub_id);
+    console.log('placementId', options.placementId);
+  }
+  async call_tnk_rewardedAd(options: { tnk_pub_id: string; placementId: string; }): Promise<void> {
+    console.log('tnk_pub_id', options.tnk_pub_id);
+    console.log('placementId', options.placementId);
+  }
+  
 }

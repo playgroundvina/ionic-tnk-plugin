@@ -13,24 +13,64 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`call_tnk_bannerAd(...)`](#call_tnk_bannerad)
+* [`call_tnk_nativeAd(...)`](#call_tnk_nativead)
+* [`call_tnk_interstitialAd(...)`](#call_tnk_interstitialad)
+* [`call_tnk_rewardedAd(...)`](#call_tnk_rewardedad)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### call_tnk_bannerAd(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+call_tnk_bannerAd(options: { tnk_pub_id: string; placementId: string; }) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+| Param         | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code>{ tnk_pub_id: string; placementId: string; }</code> |
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+--------------------
+
+
+### call_tnk_nativeAd(...)
+
+```typescript
+call_tnk_nativeAd(options: { tnk_pub_id: string; placementId: string; }) => Promise<void>
+```
+
+| Param         | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code>{ tnk_pub_id: string; placementId: string; }</code> |
+
+--------------------
+
+
+### call_tnk_interstitialAd(...)
+
+```typescript
+call_tnk_interstitialAd(options: { tnk_pub_id: string; placementId: string; }) => Promise<void>
+```
+
+| Param         | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code>{ tnk_pub_id: string; placementId: string; }</code> |
+
+--------------------
+
+
+### call_tnk_rewardedAd(...)
+
+```typescript
+call_tnk_rewardedAd(options: { tnk_pub_id: string; placementId: string; }) => Promise<void>
+```
+
+| Param         | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code>{ tnk_pub_id: string; placementId: string; }</code> |
 
 --------------------
 
