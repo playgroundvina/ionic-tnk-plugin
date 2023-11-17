@@ -101,7 +101,7 @@ call_tnk_rewardedAd(options: { tnk_pub_id: string; placementId: string; }) => Pr
 
 
 ### initialize(...)
-
+WArning: if you don't have "REAL appId" please using "TEST_ID" string instead.
 ```typescript
 initialize(options: { appId: string; }) => Promise<void>
 ```
