@@ -86,7 +86,6 @@ public class BannerExecutor extends Executor {
 
         // Why a try catch block?
         try {
-            mAdView = new BannerAdView(contextSupplier.get(), adBannerId);
 
 
             // Setup AdView Layout
@@ -137,6 +136,8 @@ public class BannerExecutor extends Executor {
                     .get()
                     .runOnUiThread(
                             () -> {
+                                mAdView = new BannerAdView(contextSupplier.get(), adBannerId);
+
                                 // Add the AdView to the view hierarchy.
                                 mAdViewLayout.addView(mAdView);
                                 // Start loading the ad.
