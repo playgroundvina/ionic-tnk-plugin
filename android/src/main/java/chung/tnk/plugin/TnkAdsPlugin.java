@@ -19,6 +19,8 @@ import chung.tnk.plugin.rewarded.AdRewardExecutor;
 public class TnkAdsPlugin extends Plugin {
 
 
+
+
     private final BannerExecutor bannerExecutor = new BannerExecutor(
             this::getContext,
             this::getActivity,
@@ -38,7 +40,11 @@ public class TnkAdsPlugin extends Plugin {
             getLogTag()
     );
 
-
+    @Override
+    public void load() {
+        bannerExecutor.initialize();
+    }
+    
     // Show a banner Ad
     @PluginMethod
     public void showBanner(final PluginCall call) {
