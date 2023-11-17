@@ -285,7 +285,7 @@ public class CapacitorPluginTnkPlugin: CAPPlugin, TnkAdListener {
     
     public func onClick(_ adItem: TnkAdItem) {
         print("click")
-        self.notifyListeners("bannerAdClicked", data: ["bannerAdClicked": true])
+        self.notifyListeners("bannerAdClick", data: ["bannerAdClick": true])
     }
     
     
@@ -339,19 +339,19 @@ class InterstitialAD_ViewContoller: UIViewController , TnkAdListener {
        
     }
     func onClick(_ adItem: TnkAdItem) {
-        self.callerCapacitor?.notifyListeners("onInterstitialClicked", data: ["onInterstitialClicked":true])
+        self.callerCapacitor?.notifyListeners("interstitialAdClick", data: ["interstitialAdClick":true])
     }
     func onLoad(_ adItem:TnkAdItem) {
             adItem.show()
-        self.callerCapacitor?.notifyListeners("onInterstitialLoaded", data: ["onInterstitialLoaded":true])
+        self.callerCapacitor?.notifyListeners("interstitialAdLoad", data: ["interstitialAdLoad":true])
         }
     func onClose(_ adItem:TnkAdItem, type:AdClose) {
             if (type == AdClose.Exit) {
-                self.callerCapacitor?.notifyListeners("onInterstitialDismissed", data: ["onInterstitialDismissed":true])
+                self.callerCapacitor?.notifyListeners("interstitialAdClose", data: ["interstitialAdClose":true])
                 exit(1)
                 
             }
-        self.callerCapacitor?.notifyListeners("onInterstitialClicked", data: ["onInterstitialClicked":true])
+        self.callerCapacitor?.notifyListeners("interstitialAdClick", data: ["interstitialAdClick":true])
         self.dismiss(animated: true)
         }
     
@@ -422,18 +422,19 @@ class RewardedAdViewContoller: UIViewController, TnkAdListener {
             // 적립 실패
             self.dismiss(animated: true)
         }
-        self.callerCapacitor?.notifyListeners("onRewardedVideoFinished", data: ["onRewardedVideoFinished":true])
+        self.callerCapacitor?.notifyListeners("rewardAdVideoCompletion", data: ["rewardAdVideoCompletion":true])
     }
     
     func onClick(_ adItem: TnkAdItem) {
-        self.callerCapacitor?.notifyListeners("onRewardedVideoFinished", data: ["onRewardedVideoFinished":true])
+        self.callerCapacitor?.notifyListeners("rewardAdClick", data: ["rewardAdClick":true])
     }
     func onClose(_ adItem:TnkAdItem, type:AdClose) {
             if (type == AdClose.Exit) {
+                self.callerCapacitor?.notifyListeners("rewardAdVideoCompletion", data: ["rewardAdVideoCompletion":true])
                 exit(1)
                 
             }
-        self.callerCapacitor?.notifyListeners("onRewardedVideoFinished", data: ["onRewardedVideoFinished":true])
+        self.callerCapacitor?.notifyListeners("rewardAdClose", data: ["rewardAdClose":true])
         self.dismiss(animated: true)
         }
 }
