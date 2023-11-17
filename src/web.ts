@@ -6,6 +6,7 @@ export class CapacitorPluginTnkWeb
   extends WebPlugin
   implements CapacitorPluginTnkPlugin
 {
+
   async call_tnk_bannerAd(options: { tnk_pub_id: string; placementId: string; }): Promise<void> {
     console.log('tnk_pub_id', options.tnk_pub_id);
     console.log('placementId', options.placementId);

@@ -22,25 +22,27 @@ npx cap sync
 * [`hideBanner()`](#hidebanner)
 * [`removeBanner()`](#removebanner)
 * [`resumeBanner()`](#resumebanner)
-* [`addListener('bannerAdLoaded', ...)`](#addlistenerbanneradloaded)
-* [`addListener('bannerAdFailedToLoad', ...)`](#addlistenerbanneradfailedtoload)
-* [`addListener('bannerAdClicked', ...)`](#addlistenerbanneradclicked)
+* [`addListener('bannerAdLoad', ...)`](#addlistenerbanneradload)
+* [`addListener('bannerError', ...)`](#addlistenerbannererror)
+* [`addListener('bannerAdClick', ...)`](#addlistenerbanneradclick)
+* [`addListener('bannerAdShow', ...)`](#addlistenerbanneradshow)
 * [`prepareRewardVideoAd(...)`](#preparerewardvideoad)
 * [`showRewardVideoAd()`](#showrewardvideoad)
 * [`isLoadedRewardVideoAd()`](#isloadedrewardvideoad)
-* [`addListener('onRewardedVideoLoaded', ...)`](#addlisteneronrewardedvideoloaded)
-* [`addListener('onRewardedVideoFailedToLoad', ...)`](#addlisteneronrewardedvideofailedtoload)
-* [`addListener('onRewardedVideoClicked', ...)`](#addlisteneronrewardedvideoclicked)
-* [`addListener('onRewardedVideoStarted', ...)`](#addlisteneronrewardedvideostarted)
-* [`addListener('onRewardedVideoFinished', ...)`](#addlisteneronrewardedvideofinished)
+* [`addListener('rewardAdLoad', ...)`](#addlistenerrewardadload)
+* [`addListener('rewardError', ...)`](#addlistenerrewarderror)
+* [`addListener('rewardAdClick', ...)`](#addlistenerrewardadclick)
+* [`addListener('rewardAdShow', ...)`](#addlistenerrewardadshow)
+* [`addListener('rewardAdClose', ...)`](#addlistenerrewardadclose)
+* [`addListener('rewardAdVideoCompletion', ...)`](#addlistenerrewardadvideocompletion)
 * [`prepareInterstitial(...)`](#prepareinterstitial)
 * [`showInterstitial()`](#showinterstitial)
 * [`isLoadedInterstitial()`](#isloadedinterstitial)
-* [`addListener('onInterstitialLoaded', ...)`](#addlisteneroninterstitialloaded)
-* [`addListener('onInterstitialFailedToLoad', ...)`](#addlisteneroninterstitialfailedtoload)
-* [`addListener('onInterstitialClicked', ...)`](#addlisteneroninterstitialclicked)
-* [`addListener('onInterstitialShown', ...)`](#addlisteneroninterstitialshown)
-* [`addListener('onInterstitialDismissed', ...)`](#addlisteneroninterstitialdismissed)
+* [`addListener('interstitialAdLoad', ...)`](#addlistenerinterstitialadload)
+* [`addListener('interstitialError', ...)`](#addlistenerinterstitialerror)
+* [`addListener('interstitialAdClick', ...)`](#addlistenerinterstitialadclick)
+* [`addListener('interstitialAdShow', ...)`](#addlistenerinterstitialadshow)
+* [`addListener('interstitialAdClose', ...)`](#addlistenerinterstitialadclose)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -101,7 +103,7 @@ call_tnk_rewardedAd(options: { tnk_pub_id: string; placementId: string; }) => Pr
 
 
 ### initialize(...)
-WArning: if you don't have "REAL appId" please using "TEST_ID" string instead.
+
 ```typescript
 initialize(options: { appId: string; }) => Promise<void>
 ```
@@ -153,48 +155,64 @@ resumeBanner() => Promise<void>
 --------------------
 
 
-### addListener('bannerAdLoaded', ...)
+### addListener('bannerAdLoad', ...)
 
 ```typescript
-addListener(eventName: "bannerAdLoaded", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "bannerAdLoad", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-| Param              | Type                          |
-| ------------------ | ----------------------------- |
-| **`eventName`**    | <code>'bannerAdLoaded'</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>    |
+| Param              | Type                        |
+| ------------------ | --------------------------- |
+| **`eventName`**    | <code>'bannerAdLoad'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>  |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener('bannerAdFailedToLoad', ...)
+### addListener('bannerError', ...)
 
 ```typescript
-addListener(eventName: "bannerAdFailedToLoad", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "bannerError", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-| Param              | Type                                |
-| ------------------ | ----------------------------------- |
-| **`eventName`**    | <code>'bannerAdFailedToLoad'</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>          |
+| Param              | Type                       |
+| ------------------ | -------------------------- |
+| **`eventName`**    | <code>'bannerError'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code> |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener('bannerAdClicked', ...)
+### addListener('bannerAdClick', ...)
 
 ```typescript
-addListener(eventName: "bannerAdClicked", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "bannerAdClick", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-| Param              | Type                           |
-| ------------------ | ------------------------------ |
-| **`eventName`**    | <code>'bannerAdClicked'</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>     |
+| Param              | Type                         |
+| ------------------ | ---------------------------- |
+| **`eventName`**    | <code>'bannerAdClick'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>   |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
+### addListener('bannerAdShow', ...)
+
+```typescript
+addListener(eventName: "bannerAdShow", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+| Param              | Type                        |
+| ------------------ | --------------------------- |
+| **`eventName`**    | <code>'bannerAdShow'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>  |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
@@ -234,79 +252,95 @@ isLoadedRewardVideoAd() => Promise<{ isLoadedRewardVideoAd: boolean; }>
 --------------------
 
 
-### addListener('onRewardedVideoLoaded', ...)
+### addListener('rewardAdLoad', ...)
 
 ```typescript
-addListener(eventName: "onRewardedVideoLoaded", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "rewardAdLoad", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-| Param              | Type                                 |
-| ------------------ | ------------------------------------ |
-| **`eventName`**    | <code>'onRewardedVideoLoaded'</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>           |
+| Param              | Type                        |
+| ------------------ | --------------------------- |
+| **`eventName`**    | <code>'rewardAdLoad'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>  |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener('onRewardedVideoFailedToLoad', ...)
+### addListener('rewardError', ...)
 
 ```typescript
-addListener(eventName: "onRewardedVideoFailedToLoad", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "rewardError", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-| Param              | Type                                       |
-| ------------------ | ------------------------------------------ |
-| **`eventName`**    | <code>'onRewardedVideoFailedToLoad'</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>                 |
+| Param              | Type                       |
+| ------------------ | -------------------------- |
+| **`eventName`**    | <code>'rewardError'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code> |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener('onRewardedVideoClicked', ...)
+### addListener('rewardAdClick', ...)
 
 ```typescript
-addListener(eventName: "onRewardedVideoClicked", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "rewardAdClick", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-| Param              | Type                                  |
-| ------------------ | ------------------------------------- |
-| **`eventName`**    | <code>'onRewardedVideoClicked'</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>            |
+| Param              | Type                         |
+| ------------------ | ---------------------------- |
+| **`eventName`**    | <code>'rewardAdClick'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>   |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener('onRewardedVideoStarted', ...)
+### addListener('rewardAdShow', ...)
 
 ```typescript
-addListener(eventName: "onRewardedVideoStarted", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "rewardAdShow", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-| Param              | Type                                  |
-| ------------------ | ------------------------------------- |
-| **`eventName`**    | <code>'onRewardedVideoStarted'</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>            |
+| Param              | Type                        |
+| ------------------ | --------------------------- |
+| **`eventName`**    | <code>'rewardAdShow'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>  |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener('onRewardedVideoFinished', ...)
+### addListener('rewardAdClose', ...)
 
 ```typescript
-addListener(eventName: "onRewardedVideoFinished", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "rewardAdClose", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+| Param              | Type                         |
+| ------------------ | ---------------------------- |
+| **`eventName`**    | <code>'rewardAdClose'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>   |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
+### addListener('rewardAdVideoCompletion', ...)
+
+```typescript
+addListener(eventName: "rewardAdVideoCompletion", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 | Param              | Type                                   |
 | ------------------ | -------------------------------------- |
-| **`eventName`**    | <code>'onRewardedVideoFinished'</code> |
+| **`eventName`**    | <code>'rewardAdVideoCompletion'</code> |
 | **`listenerFunc`** | <code>() =&gt; void</code>             |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
@@ -347,63 +381,47 @@ isLoadedInterstitial() => Promise<{ isLoadedInterstitial: boolean; }>
 --------------------
 
 
-### addListener('onInterstitialLoaded', ...)
+### addListener('interstitialAdLoad', ...)
 
 ```typescript
-addListener(eventName: "onInterstitialLoaded", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "interstitialAdLoad", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-| Param              | Type                                |
-| ------------------ | ----------------------------------- |
-| **`eventName`**    | <code>'onInterstitialLoaded'</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>          |
+| Param              | Type                              |
+| ------------------ | --------------------------------- |
+| **`eventName`**    | <code>'interstitialAdLoad'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>        |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener('onInterstitialFailedToLoad', ...)
+### addListener('interstitialError', ...)
 
 ```typescript
-addListener(eventName: "onInterstitialFailedToLoad", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "interstitialError", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-| Param              | Type                                      |
-| ------------------ | ----------------------------------------- |
-| **`eventName`**    | <code>'onInterstitialFailedToLoad'</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>                |
+| Param              | Type                             |
+| ------------------ | -------------------------------- |
+| **`eventName`**    | <code>'interstitialError'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>       |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
 
-### addListener('onInterstitialClicked', ...)
+### addListener('interstitialAdClick', ...)
 
 ```typescript
-addListener(eventName: "onInterstitialClicked", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
-```
-
-| Param              | Type                                 |
-| ------------------ | ------------------------------------ |
-| **`eventName`**    | <code>'onInterstitialClicked'</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>           |
-
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
-
---------------------
-
-
-### addListener('onInterstitialShown', ...)
-
-```typescript
-addListener(eventName: "onInterstitialShown", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "interstitialAdClick", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
 | Param              | Type                               |
 | ------------------ | ---------------------------------- |
-| **`eventName`**    | <code>'onInterstitialShown'</code> |
+| **`eventName`**    | <code>'interstitialAdClick'</code> |
 | **`listenerFunc`** | <code>() =&gt; void</code>         |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
@@ -411,16 +429,32 @@ addListener(eventName: "onInterstitialShown", listenerFunc: () => void) => Promi
 --------------------
 
 
-### addListener('onInterstitialDismissed', ...)
+### addListener('interstitialAdShow', ...)
 
 ```typescript
-addListener(eventName: "onInterstitialDismissed", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+addListener(eventName: "interstitialAdShow", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
 ```
 
-| Param              | Type                                   |
-| ------------------ | -------------------------------------- |
-| **`eventName`**    | <code>'onInterstitialDismissed'</code> |
-| **`listenerFunc`** | <code>() =&gt; void</code>             |
+| Param              | Type                              |
+| ------------------ | --------------------------------- |
+| **`eventName`**    | <code>'interstitialAdShow'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>        |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
+### addListener('interstitialAdClose', ...)
+
+```typescript
+addListener(eventName: "interstitialAdClose", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+| Param              | Type                               |
+| ------------------ | ---------------------------------- |
+| **`eventName`**    | <code>'interstitialAdClose'</code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>         |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 

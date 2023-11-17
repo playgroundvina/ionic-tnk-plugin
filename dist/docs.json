@@ -133,12 +133,12 @@
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"bannerAdLoaded\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"bannerAdLoad\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'bannerAdLoaded'"
+            "type": "'bannerAdLoad'"
           },
           {
             "name": "listenerFunc",
@@ -152,16 +152,16 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlistenerbanneradloaded"
+        "slug": "addlistenerbanneradload"
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"bannerAdFailedToLoad\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"bannerError\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'bannerAdFailedToLoad'"
+            "type": "'bannerError'"
           },
           {
             "name": "listenerFunc",
@@ -175,16 +175,16 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlistenerbanneradfailedtoload"
+        "slug": "addlistenerbannererror"
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"bannerAdClicked\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"bannerAdClick\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'bannerAdClicked'"
+            "type": "'bannerAdClick'"
           },
           {
             "name": "listenerFunc",
@@ -198,7 +198,30 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlistenerbanneradclicked"
+        "slug": "addlistenerbanneradclick"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: \"bannerAdShow\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'bannerAdShow'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "() => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle> & PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistenerbanneradshow"
       },
       {
         "name": "prepareRewardVideoAd",
@@ -238,12 +261,12 @@
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"onRewardedVideoLoaded\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"rewardAdLoad\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'onRewardedVideoLoaded'"
+            "type": "'rewardAdLoad'"
           },
           {
             "name": "listenerFunc",
@@ -257,16 +280,16 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlisteneronrewardedvideoloaded"
+        "slug": "addlistenerrewardadload"
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"onRewardedVideoFailedToLoad\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"rewardError\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'onRewardedVideoFailedToLoad'"
+            "type": "'rewardError'"
           },
           {
             "name": "listenerFunc",
@@ -280,16 +303,16 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlisteneronrewardedvideofailedtoload"
+        "slug": "addlistenerrewarderror"
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"onRewardedVideoClicked\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"rewardAdClick\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'onRewardedVideoClicked'"
+            "type": "'rewardAdClick'"
           },
           {
             "name": "listenerFunc",
@@ -303,16 +326,16 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlisteneronrewardedvideoclicked"
+        "slug": "addlistenerrewardadclick"
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"onRewardedVideoStarted\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"rewardAdShow\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'onRewardedVideoStarted'"
+            "type": "'rewardAdShow'"
           },
           {
             "name": "listenerFunc",
@@ -326,16 +349,16 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlisteneronrewardedvideostarted"
+        "slug": "addlistenerrewardadshow"
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"onRewardedVideoFinished\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"rewardAdClose\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'onRewardedVideoFinished'"
+            "type": "'rewardAdClose'"
           },
           {
             "name": "listenerFunc",
@@ -349,7 +372,30 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlisteneronrewardedvideofinished"
+        "slug": "addlistenerrewardadclose"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: \"rewardAdVideoCompletion\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'rewardAdVideoCompletion'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "() => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle> & PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistenerrewardadvideocompletion"
       },
       {
         "name": "prepareInterstitial",
@@ -389,12 +435,12 @@
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"onInterstitialLoaded\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"interstitialAdLoad\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'onInterstitialLoaded'"
+            "type": "'interstitialAdLoad'"
           },
           {
             "name": "listenerFunc",
@@ -408,16 +454,16 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlisteneroninterstitialloaded"
+        "slug": "addlistenerinterstitialadload"
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"onInterstitialFailedToLoad\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"interstitialError\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'onInterstitialFailedToLoad'"
+            "type": "'interstitialError'"
           },
           {
             "name": "listenerFunc",
@@ -431,16 +477,16 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlisteneroninterstitialfailedtoload"
+        "slug": "addlistenerinterstitialerror"
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"onInterstitialClicked\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"interstitialAdClick\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'onInterstitialClicked'"
+            "type": "'interstitialAdClick'"
           },
           {
             "name": "listenerFunc",
@@ -454,16 +500,16 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlisteneroninterstitialclicked"
+        "slug": "addlistenerinterstitialadclick"
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"onInterstitialShown\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"interstitialAdShow\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'onInterstitialShown'"
+            "type": "'interstitialAdShow'"
           },
           {
             "name": "listenerFunc",
@@ -477,16 +523,16 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlisteneroninterstitialshown"
+        "slug": "addlistenerinterstitialadshow"
       },
       {
         "name": "addListener",
-        "signature": "(eventName: \"onInterstitialDismissed\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
+        "signature": "(eventName: \"interstitialAdClose\", listenerFunc: () => void) => Promise<PluginListenerHandle> & PluginListenerHandle",
         "parameters": [
           {
             "name": "eventName",
             "docs": "",
-            "type": "'onInterstitialDismissed'"
+            "type": "'interstitialAdClose'"
           },
           {
             "name": "listenerFunc",
@@ -500,7 +546,7 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlisteneroninterstitialdismissed"
+        "slug": "addlistenerinterstitialadclose"
       }
     ],
     "properties": []
