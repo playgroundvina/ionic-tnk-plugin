@@ -44,7 +44,7 @@ public class TnkAdsPlugin extends Plugin {
     public void load() {
         bannerExecutor.initialize();
     }
-    
+
     // Show a banner Ad
     @PluginMethod
     public void showBanner(final PluginCall call) {
