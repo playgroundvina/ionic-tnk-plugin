@@ -19,10 +19,10 @@ export interface CapacitorPluginTnkPlugin {
   resumeBanner(): Promise<void>;
 
 
-  addListener(eventName: "bannerAdLoaded", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: "bannerAdFailedToLoad", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: "bannerAdClicked", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-
+  addListener(eventName: "bannerAdLoad", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "bannerError", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "bannerAdClick", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "bannerAdShow", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 
 
   // Reward
@@ -30,11 +30,12 @@ export interface CapacitorPluginTnkPlugin {
   showRewardVideoAd(): Promise<void>;
   isLoadedRewardVideoAd(): Promise<{ isLoadedRewardVideoAd: boolean }>;
 
-  addListener(eventName: "onRewardedVideoLoaded", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: "onRewardedVideoFailedToLoad", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: "onRewardedVideoClicked", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: "onRewardedVideoStarted", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: "onRewardedVideoFinished", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "rewardAdLoad", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "rewardError", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "rewardAdClick", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "rewardAdShow", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "rewardAdClose", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "rewardAdVideoCompletion", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 
 
   // Interstitial
@@ -43,10 +44,10 @@ export interface CapacitorPluginTnkPlugin {
   isLoadedInterstitial(): Promise<{ isLoadedInterstitial: boolean }>;
 
 
-  addListener(eventName: "onInterstitialLoaded", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: "onInterstitialFailedToLoad", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: "onInterstitialClicked", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: "onInterstitialShown", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
-  addListener(eventName: "onInterstitialDismissed", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "interstitialAdLoad", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "interstitialError", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "interstitialAdClick", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "interstitialAdShow", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
+  addListener(eventName: "interstitialAdClose", listenerFunc: () => void): Promise<PluginListenerHandle> & PluginListenerHandle;
 
 }
