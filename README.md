@@ -9,6 +9,26 @@ npm install capacitor-plugin-tnk
 npx cap sync
 ```
 
+## Id for test:
+adBannerId: TEST_BANNER_100
+adInterstitialId: TEST_INTERSTITIAL_V
+adRewardId: TEST_REWARD_V
+import { CapacitorPluginTnk } from 'capacitor-plugin-tnk';
+
+
+Example show a banner :
+const options = { adBannerId: "TEST_BANNER_100", // remember replace adBannerId position: 'TOP_CENTER', // position : TOP_CENTER, CENTER, default: BOTTOM_CENTER margin: 75, // margin only for BOTTOM_CENTER or TOP_CENTER, default value =0 }; await CapacitorPluginAdPie.showBanner(options);
+
+To remove a listener from the plugin object:
+
+Example:
+const myRewardClickListener = await CapacitorPluginAdPie.addListener('onRewardedVideoClicked', () => {
+
+console.log(' onRewardedVideoClicked')
+});
+
+myRewardClickListener.remove(); // remove
+
 ## API
 
 <docgen-index>
